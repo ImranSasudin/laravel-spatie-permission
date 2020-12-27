@@ -28,6 +28,12 @@ class RolesAndPermissionsSeeder extends Seeder
         Permission::create(['name' => 'publish articles', 'module_id' => '1']);
         Permission::create(['name' => 'unpublish articles', 'module_id' => '1']);
 
+        Module::create(['name' => 'Post']);
+        Permission::create(['name' => 'create posts', 'module_id' => '2']);
+        Permission::create(['name' => 'view posts', 'module_id' => '2']);
+        Permission::create(['name' => 'edit posts', 'module_id' => '2']);
+        Permission::create(['name' => 'delete posts', 'module_id' => '2']);
+
         $role1 = Role::create(['name' => 'super-admin']);
         $user = \App\Models\User::factory()->create([
             'name' => 'Super Admin',
