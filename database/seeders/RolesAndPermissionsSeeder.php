@@ -27,6 +27,12 @@ class RolesAndPermissionsSeeder extends Seeder
         Permission::create(['name' => 'unpublish articles']);
 
         $role1 = Role::create(['name' => 'super-admin']);
+        $user = \App\Models\User::factory()->create([
+            'name' => 'Super Admin',
+            'email' => 'superadmin@gmail.com',
+            'password' => Hash::make('super-admin'),
+        ]);
+        $user->assignRole($role1);
 
         $role2 = Role::create(['name' => 'admin']);
         $role2->givePermissionTo('publish articles');
