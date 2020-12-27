@@ -30,7 +30,7 @@ class RolesAndPermissionsSeeder extends Seeder
         $user = \App\Models\User::factory()->create([
             'name' => 'Super Admin',
             'email' => 'superadmin@gmail.com',
-            'password' => Hash::make('super-admin'),
+            'password' => Hash::make('123'),
         ]);
         $user->assignRole($role1);
 
@@ -41,7 +41,7 @@ class RolesAndPermissionsSeeder extends Seeder
         $user = \App\Models\User::factory()->create([
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
-            'password' => Hash::make('admin'),
+            'password' => Hash::make('123'),
         ]);
         $user->assignRole($role2);
 
@@ -53,7 +53,7 @@ class RolesAndPermissionsSeeder extends Seeder
         $user = \App\Models\User::factory()->create([
             'name' => 'Writer',
             'email' => 'writer@gmail.com',
-            'password' => Hash::make('writer'),
+            'password' => Hash::make('123'),
         ]);
         $user->assignRole($role3);
 
@@ -62,7 +62,7 @@ class RolesAndPermissionsSeeder extends Seeder
         $user = \App\Models\User::factory()->create([
             'name' => 'User',
             'email' => 'user@gmail.com',
-            'password' => Hash::make('user'),
+            'password' => Hash::make('123'),
         ]);
         $user->assignRole($role4);
 
