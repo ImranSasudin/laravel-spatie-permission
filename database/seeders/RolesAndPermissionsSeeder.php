@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\PermissionRegistrar;
+use App\Models\Module;
 use Hash;
 
 class RolesAndPermissionsSeeder extends Seeder
@@ -19,12 +20,13 @@ class RolesAndPermissionsSeeder extends Seeder
     {
         app()[PermissionRegistrar::class]->forgetCachedPermissions();
 
-        Permission::create(['name' => 'create articles']);
-        Permission::create(['name' => 'view articles']);
-        Permission::create(['name' => 'edit articles']);
-        Permission::create(['name' => 'delete articles']);
-        Permission::create(['name' => 'publish articles']);
-        Permission::create(['name' => 'unpublish articles']);
+        Module::create(['name' => 'Article']);
+        Permission::create(['name' => 'create articles', 'module_id' => '1']);
+        Permission::create(['name' => 'view articles', 'module_id' => '1']);
+        Permission::create(['name' => 'edit articles', 'module_id' => '1']);
+        Permission::create(['name' => 'delete articles', 'module_id' => '1']);
+        Permission::create(['name' => 'publish articles', 'module_id' => '1']);
+        Permission::create(['name' => 'unpublish articles', 'module_id' => '1']);
 
         $role1 = Role::create(['name' => 'super-admin']);
         $user = \App\Models\User::factory()->create([
