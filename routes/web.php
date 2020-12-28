@@ -21,6 +21,7 @@ Route::get('/', function () {
 Route::middleware(['auth'])->group(function (){
     Route::get('/dashboard', 'UserController@dashboard')->name('dashboard');
     Route::get('/permission', 'PermissionController@index')->name('permission')->middleware('role:super-admin');
+    Route::get('/role', 'RoleController@index')->name('role')->middleware('role:super-admin');
     Route::get('/article', 'ArticleController@index')->name('article')->middleware('permission:view articles');
     Route::get('/post', 'PostController@index')->name('post')->middleware('permission:view posts');
 });
