@@ -41,7 +41,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img src="/images/ui1.jpg" alt="Logo">
+<img src="/images/ui1.JPG" alt="Logo">
 
 Just a simple implementation for spatie permission with livewire.
 
